@@ -1,0 +1,425 @@
+$date
+	Tue Aug 11 13:22:23 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_core $end
+$var reg 1 ! clk $end
+$var reg 1 " reset $end
+$scope module uut $end
+$var wire 1 ! clk $end
+$var wire 1 " reset $end
+$var wire 16 # write_address_UART [15:0] $end
+$var wire 16 $ write_data_UART [15:0] $end
+$var wire 1 % write_enable_UART $end
+$var wire 16 & rt_value [15:0] $end
+$var wire 16 ' rs_value [15:0] $end
+$var wire 3 ( rflag [2:0] $end
+$var wire 2 ) regwritesrc [1:0] $end
+$var wire 1 * regwrite $end
+$var wire 16 + read_data [15:0] $end
+$var wire 2 , pc_select [1:0] $end
+$var wire 16 - pc_incremented [15:0] $end
+$var wire 16 . pc [15:0] $end
+$var wire 1 / mem_write $end
+$var wire 16 0 instruction [15:0] $end
+$var wire 16 1 extend_out [15:0] $end
+$var wire 1 2 alusrc $end
+$var wire 16 3 alu_out [15:0] $end
+$var wire 4 4 alu_control [3:0] $end
+$var wire 16 5 alu_b [15:0] $end
+$var reg 16 6 write_reg_data [15:0] $end
+$scope module alu_instruction $end
+$var wire 16 7 alu_b [15:0] $end
+$var wire 4 8 shamt [3:0] $end
+$var wire 4 9 alu_control [3:0] $end
+$var wire 16 : alu_a [15:0] $end
+$var reg 16 ; alu_out [15:0] $end
+$upscope $end
+$scope module controller_instruction $end
+$var wire 2 < funcbit [5:4] $end
+$var wire 4 = opcode [15:12] $end
+$var reg 4 > alu_control [3:0] $end
+$var reg 1 2 alusrc $end
+$var reg 1 / mem_write $end
+$var reg 2 ? pc_select [1:0] $end
+$var reg 1 * regwrite $end
+$var reg 2 @ regwritesrc [1:0] $end
+$upscope $end
+$scope module data_memory_instruction $end
+$var wire 16 A address [15:0] $end
+$var wire 1 ! clk $end
+$var wire 1 / mem_write $end
+$var wire 16 B read_data [15:0] $end
+$var wire 16 C write_data [15:0] $end
+$upscope $end
+$scope module imem $end
+$var wire 1 ! clk $end
+$var wire 16 D instruction [15:0] $end
+$var wire 16 E write_address [15:0] $end
+$var wire 16 F write_data [15:0] $end
+$var wire 1 % write_enable $end
+$var wire 16 G address [15:0] $end
+$upscope $end
+$scope module pc_unit_instruction $end
+$var wire 1 ! clk $end
+$var wire 2 H pc_select [1:0] $end
+$var wire 1 " reset $end
+$var wire 16 I r_base [15:0] $end
+$var wire 16 J pc_offset [15:0] $end
+$var reg 16 K pc [15:0] $end
+$var reg 16 L pc_incremented [15:0] $end
+$upscope $end
+$scope module registers_file_instruction $end
+$var wire 1 ! clk $end
+$var wire 16 M r_result [15:0] $end
+$var wire 3 N rd [2:0] $end
+$var wire 1 * regwrite $end
+$var wire 1 " reset $end
+$var wire 3 O rs [2:0] $end
+$var wire 3 P rt [2:0] $end
+$var wire 16 Q write_reg_data [15:0] $end
+$var wire 16 R rt_value [15:0] $end
+$var wire 16 S rs_value [15:0] $end
+$var parameter 3 T rneg $end
+$var parameter 3 U rpos $end
+$var parameter 3 V rzer $end
+$var reg 3 W rflag [2:0] $end
+$var integer 32 X i [31:0] $end
+$upscope $end
+$scope module sign_extend_instruction $end
+$var wire 16 Y instruction [15:0] $end
+$var wire 4 Z opcode [3:0] $end
+$var reg 16 [ extend_out [15:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b10 V
+b1 U
+b100 T
+$end
+#0
+$dumpvars
+b101 [
+b1 Z
+b1001001100101 Y
+b1000 X
+b10 W
+b0 S
+b0 R
+b0 Q
+b101 P
+b1 O
+b1 N
+bz M
+b11000000000001 L
+b11000000000000 K
+b101 J
+b0 I
+b0 H
+b11000000000000 G
+bz F
+bz E
+b1001001100101 D
+b0 C
+bx B
+b0 A
+b0 @
+b0 ?
+b0 >
+b1 =
+b10 <
+b0 ;
+b0 :
+b0 9
+b101 8
+b0 7
+b0 6
+b0 5
+b0 4
+b0 3
+02
+b101 1
+b1001001100101 0
+0/
+b11000000000000 .
+b11000000000001 -
+b0 ,
+bx +
+1*
+b0 )
+b10 (
+b0 '
+b0 &
+z%
+bz $
+bz #
+1"
+0!
+$end
+#10000
+b1000 X
+1!
+#20000
+0!
+#30000
+b1000 X
+1!
+#40000
+0!
+0"
+#50000
+bx 6
+bx Q
+bx 3
+bx ;
+bx A
+bz '
+bz :
+bz C
+bz I
+bz S
+b1 -
+b1 L
+b0 .
+b0 G
+b0 K
+1!
+#60000
+0!
+#70000
+bx 5
+bx 7
+bx &
+bx R
+bx '
+bx :
+bx C
+bx I
+bx S
+0*
+b0 1
+b0 J
+b0 [
+bx 8
+bx P
+bx O
+bx N
+bx <
+bx =
+bx Z
+bx 0
+bx D
+bx Y
+bx -
+bx L
+bz .
+bz G
+bz K
+b1 (
+b1 W
+1!
+#80000
+0!
+#90000
+bx .
+bx G
+bx K
+1!
+#100000
+0!
+#110000
+1!
+#120000
+0!
+#130000
+1!
+#140000
+0!
+#150000
+1!
+#160000
+0!
+#170000
+1!
+#180000
+0!
+#190000
+1!
+#200000
+0!
+#210000
+1!
+#220000
+0!
+#230000
+1!
+#240000
+0!
+#250000
+1!
+#260000
+0!
+#270000
+1!
+#280000
+0!
+#290000
+1!
+#300000
+0!
+#310000
+1!
+#320000
+0!
+#330000
+1!
+#340000
+0!
+#350000
+1!
+#360000
+0!
+#370000
+1!
+#380000
+0!
+#390000
+1!
+#400000
+0!
+#410000
+1!
+#420000
+0!
+#430000
+1!
+#440000
+0!
+#450000
+1!
+#460000
+0!
+#470000
+1!
+#480000
+0!
+#490000
+1!
+#500000
+0!
+#510000
+1!
+#520000
+0!
+#530000
+1!
+#540000
+0!
+#550000
+1!
+#560000
+0!
+#570000
+1!
+#580000
+0!
+#590000
+1!
+#600000
+0!
+#610000
+1!
+#620000
+0!
+#630000
+1!
+#640000
+0!
+#650000
+1!
+#660000
+0!
+#670000
+1!
+#680000
+0!
+#690000
+1!
+#700000
+0!
+#710000
+1!
+#720000
+0!
+#730000
+1!
+#740000
+0!
+#750000
+1!
+#760000
+0!
+#770000
+1!
+#780000
+0!
+#790000
+1!
+#800000
+0!
+#810000
+1!
+#820000
+0!
+#830000
+1!
+#840000
+0!
+#850000
+1!
+#860000
+0!
+#870000
+1!
+#880000
+0!
+#890000
+1!
+#900000
+0!
+#910000
+1!
+#920000
+0!
+#930000
+1!
+#940000
+0!
+#950000
+1!
+#960000
+0!
+#970000
+1!
+#980000
+0!
+#990000
+1!
+#1000000
+0!
+#1010000
+1!
+#1020000
+0!
+#1030000
+1!
+#1040000
+0!
